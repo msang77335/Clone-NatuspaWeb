@@ -1,0 +1,29 @@
+const carousel = document.querySelector(".carousel");
+const header = document.querySelector(".header");
+const toTop = document.querySelector(".to-top");
+const footer = document.querySelector(".footer");
+const content = document.querySelector(".content");
+const body = document.querySelector("body");
+const bars = document.querySelector(".bars");
+
+window.addEventListener("resize", changeFixedElementWidth);
+window.addEventListener("load", changeFixedElementWidth);
+window.addEventListener("load", setMagrinBottomContent);
+bars.addEventListener("click", function () {
+  header.classList.toggle("show");
+});
+
+function setMagrinBottomContent() {
+  height = footer.getBoundingClientRect().height;
+  content.style.marginBottom = height + "px";
+}
+
+function changeFixedElementWidth() {
+  const carouselWidth = carousel.getBoundingClientRect().width;
+  header.style.width = carouselWidth + "px";
+  footer.style.width = carouselWidth + "px";
+}
+window.addEventListener("scroll", function () {
+  header.classList.toggle("sticky", window.scrollY > 0);
+  toTop.classList.toggle("active", window.scrollY > 500);
+});
