@@ -69,6 +69,12 @@ body {
   background-color: #f96882;
   text-transform: uppercase;
   padding: 1.5rem 4rem;
+  transition: all 0.35s ease;
+  border: none;
+  box-sizing: border-box;
+}
+.btn:hover {
+  background-color: #241d26;
 }
 
 .link {
@@ -167,7 +173,7 @@ body {
   padding: 2rem 7rem;
   border-bottom: 0.5px solid #cdcccd;
   position: fixed;
-  z-index: 999;
+  z-index: 10;
   transition: 0.5s;
   color: #ffff;
 }
@@ -389,7 +395,7 @@ body {
 }
 @media screen and (max-width: 669px) {
   .carousel .slick-prev,
-  .carousel .slick-next {
+.carousel .slick-next {
     display: none !important;
   }
 }
@@ -436,6 +442,9 @@ body {
     padding: 4rem 0 3rem;
   }
 }
+.banner__desc {
+  padding: 0 25rem;
+}
 .banner__list {
   display: flex;
   align-items: baseline;
@@ -463,20 +472,25 @@ body {
     width: calc(100%);
   }
 }
+.banner__item-icon {
+  font-size: 8rem;
+  line-height: 1.2;
+  color: #f96882;
+  transition: all 0.25s linear;
+}
 .banner__item-title {
   color: black;
   font-family: "Playfair Display", serif;
   font-size: 2.2rem;
   margin: 1rem 0;
 }
-.banner__item-image {
-  display: inline-block;
-  height: 7rem;
-  width: 7rem;
-}
 .banner__item-desc {
   font-size: 1.4rem;
-  color: #4f4d50;
+  color: #7c787d;
+}
+.banner__item:hover .banner__item-icon {
+  transform: translate(-3px, -3px);
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
 }
 
 .about {
@@ -485,6 +499,39 @@ body {
   justify-content: flex-start;
   flex-wrap: wrap;
   flex-direction: row;
+}
+.about .trailer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s linear;
+}
+.about .trailer.show {
+  opacity: 1;
+  visibility: visible;
+}
+.about .trailer__video {
+  max-width: 90rem;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.3);
+}
+.about .trailer__close {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
 }
 .about__video {
   position: relative;
@@ -527,7 +574,8 @@ body {
   border-radius: 50%;
   z-index: 11;
   opacity: 1;
-  animation: scale 4s infinite;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+  animation: ripple 2s linear infinite;
 }
 .about__video .play-animate::after {
   position: absolute;
@@ -538,8 +586,10 @@ body {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  animation: scale 2.5s infinite;
-  animation-delay: 2s;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+  animation: ripple 2s linear infinite;
+  animation-delay: 0.3s;
 }
 .about__video .play-animate::before {
   position: absolute;
@@ -550,33 +600,21 @@ body {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  animation: scale 1.5s infinite;
-  animation-delay: 3s;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+  animation: ripple 2s linear infinite;
+  animation-delay: 0.6s;
 }
-@keyframes scale {
-  0% {
-    transform: translate(-50%, -50%) scale(1.1);
-    opacity: 0.9;
-  }
-  25% {
-    transform: translate(-50%, -50%) scale(1.2);
-    opacity: 0.7;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.4);
-    opacity: 0.5;
-  }
-  75% {
-    transform: translate(-50%, -50%) scale(1.6);
-    opacity: 0.3;
+@keyframes ripple {
+  70% {
+    box-shadow: 0 0 0 80px rgba(255, 255, 255, 0);
   }
   100% {
-    transform: translate(-50%, -50%) scale(1.7);
-    opacity: 0;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }
 .about__content {
-  padding-left: 3.5rem;
+  padding: 0 4.5rem 0 3.5rem;
   width: 50%;
 }
 @media screen and (max-width: 1279px) {
@@ -710,16 +748,14 @@ body {
 }
 .booking__form-input {
   padding: 1.5rem;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: #cdcccd;
+  border: none;
 }
 @media screen and (max-width: 699px) {
   .booking__form {
     margin-right: 0;
   }
-}
-.booking__form .btn {
-  border: 1px solid #f96882;
 }
 .booking__item {
   width: calc(33.33% - 2.5rem);
@@ -769,6 +805,7 @@ body {
   }
 }
 .pricing__desc {
+  padding: 0 25rem;
   font-size: 1.6rem;
   margin: 2rem 0 6.5rem;
   color: #4f4d50;
@@ -881,6 +918,43 @@ body {
     flex-direction: column;
   }
 }
+.service__item:hover .service__icon {
+  color: #fff;
+}
+.service__item:hover .service__icon::after {
+  transform: scale(1);
+}
+.service__icon {
+  font-size: 4rem;
+  width: 8rem;
+  height: 8rem;
+  margin-right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  position: relative;
+  color: #f96882;
+  z-index: 1;
+  transition: all 0.35s ease;
+}
+.service__icon::after, .service__icon::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
+}
+.service__icon::after {
+  background-color: #f96882;
+  transform: scale(0);
+  transition: all 0.35s ease;
+}
+.service__icon::before {
+  background-color: #f7f7f7;
+}
 .service__info {
   display: flex;
   align-items: center;
@@ -900,7 +974,8 @@ body {
   -webkit-line-clamp: 1;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  color: #cdcccd;
+  color: #7c787d;
+  font-size: 1.4rem;
 }
 @media screen and (max-width: 500px) {
   .service__desc {
@@ -957,6 +1032,7 @@ body {
   }
 }
 .packages__solar {
+  padding: 0 25rem;
   font-size: 1.6rem;
   color: #4f4d50;
 }
@@ -1023,9 +1099,6 @@ body {
 }
 .packages__item-desc span {
   text-decoration: line-through;
-}
-.packages__item:hover {
-  transform: scale(1.1);
 }
 
 .enjoy {
@@ -1159,7 +1232,7 @@ body {
   }
 }
 .team__desc {
-  padding: 0 20rem;
+  padding: 0 25rem;
   color: #4f4d50;
   font-size: 1.6rem;
 }
@@ -1220,8 +1293,8 @@ body {
 }
 .team__links {
   position: absolute;
-  top: 5rem;
-  right: 5rem;
+  top: 3rem;
+  right: 3rem;
 }
 .team__link {
   cursor: pointer;
@@ -1262,6 +1335,7 @@ body {
   }
 }
 .posts__desc {
+  padding: 0 25rem;
   text-align: center;
   color: #4f4d50;
 }
@@ -1283,7 +1357,7 @@ body {
   content: "";
   position: absolute;
   top: -3.8rem;
-  left: 45%;
+  left: 47%;
   transform: translateX(-50%);
   width: 7.6rem;
   height: 7.6rem;
@@ -1500,9 +1574,6 @@ body {
   .contact__form-textarea {
     max-height: 20rem;
   }
-}
-.contact__form .btn {
-  border: 1px solid #f96882;
 }
 
 .footer {

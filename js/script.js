@@ -10,20 +10,37 @@ window.addEventListener("resize", changeFixedElementWidth);
 window.addEventListener("load", changeFixedElementWidth);
 window.addEventListener("load", setMagrinBottomContent);
 bars.addEventListener("click", function () {
-  header.classList.toggle("show");
+   header.classList.toggle("show");
 });
 
 function setMagrinBottomContent() {
-  height = footer.getBoundingClientRect().height;
-  content.style.marginBottom = height + "px";
+   height = footer.getBoundingClientRect().height;
+   content.style.marginBottom = height + "px";
 }
 
 function changeFixedElementWidth() {
-  const carouselWidth = carousel.getBoundingClientRect().width;
-  header.style.width = carouselWidth + "px";
-  footer.style.width = carouselWidth + "px";
+   const carouselWidth = carousel.getBoundingClientRect().width;
+   header.style.width = carouselWidth + "px";
+   footer.style.width = carouselWidth + "px";
 }
 window.addEventListener("scroll", function () {
-  header.classList.toggle("sticky", window.scrollY > 0);
-  toTop.classList.toggle("active", window.scrollY > 500);
+   header.classList.toggle("sticky", window.scrollY > 0);
+   toTop.classList.toggle("active", window.scrollY > 500);
+});
+
+//Play video
+const btnPlay = document.querySelector(".about__play");
+const btnCloseVideo = document.querySelector(".trailer__close");
+const trailer = document.querySelector(".trailer");
+const trailerVideo = document.querySelector(".trailer__video");
+
+btnPlay.addEventListener("click", function () {
+   trailer.classList.add("show");
+   trailerVideo.play();
+});
+
+btnCloseVideo.addEventListener("click", function () {
+   trailer.classList.remove("show");
+   trailerVideo.pause();
+   trailerVideo.currentTime = 0;
 });
