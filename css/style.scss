@@ -168,12 +168,24 @@ body {
       left: 0;
    }
 }
+.section-heading__desc {
+   padding: 0 25rem;
+   font-size: 1.6rem;
+   color: #4f4d50;
+   text-align: center;
+   @media screen and (max-width: 1024px) {
+      padding: 0 10rem;
+   }
+   @media screen and (max-width: 768px) {
+      padding: 0;
+   }
+}
 .header {
    @include flexbox(center, space-between, nowrap, row);
    padding: 2rem 7rem;
    border-bottom: 0.5px solid $text-color;
    position: fixed;
-   z-index: 10;
+   z-index: 15;
    transition: 0.5s;
    color: #ffff;
    @media screen and (max-width: 1279px) {
@@ -391,9 +403,6 @@ body {
    padding: 10rem 0 3rem;
    @media screen and (max-width: 1439px) {
       padding: 4rem 0 3rem;
-   }
-   &__desc {
-      padding: 0 25rem;
    }
    &__list {
       @include flexbox(baseline, flex-start, wrap, row);
@@ -708,20 +717,11 @@ body {
    @media screen and (max-width: 1439px) {
       padding: 4rem 0;
    }
-   &__desc {
-      padding: 0 25rem;
-      font-size: 1.6rem;
-      margin: 2rem 0 6.5rem;
-      color: $desc-color;
-      @media screen and (max-width: 1279px) {
-         margin-bottom: 4rem;
-      }
-   }
    .categories {
       &__list {
          @include flexbox(center, space-around, nowrap, row);
          padding: 1rem 0;
-         margin: 0 20rem;
+         margin: 3rem 20rem 0;
          border: 0.7px solid $text-color;
          border-radius: 25px;
          @media screen and (max-width: 899px) {
@@ -894,25 +894,21 @@ body {
    @media screen and (max-width: 1439px) {
       padding-bottom: 7rem;
    }
-   &__solar {
-      padding: 0 25rem;
-      font-size: 1.6rem;
-      color: $desc-color;
-   }
    &__list {
+      margin-top: 6rem;
       @include flexbox(center, space-between, wrap, row);
+      @media screen and (max-width: 1439px) {
+         margin-top: 3rem;
+      }
    }
    &__item {
-      margin-top: 6rem;
       width: calc(33% - 1rem);
       padding: 6rem;
       @media screen and (max-width: 1439px) {
          padding: 3rem;
-         margin-top: 4rem;
       }
       @media screen and (max-width: 1279px) {
          padding: 2rem;
-         margin-top: 4rem;
       }
       @media screen and (max-width: 899px) {
          width: 100%;
@@ -1065,6 +1061,9 @@ body {
    &__list {
       margin-top: 5rem;
       @include flexbox(baseline, space-between, wrap, row);
+      @media screen and (max-width: 1439px) {
+         margin-top: 3rem;
+      }
    }
    &__item {
       width: calc(33.33% - 2rem);
@@ -1144,14 +1143,12 @@ body {
    @media screen and(max-width: 1439px) {
       padding: 4rem 0 6rem;
    }
-   &__desc {
-      padding: 0 25rem;
-      text-align: center;
-      color: $desc-color;
-   }
    &__list {
       .slick-list.draggable {
-         padding-top: 10rem;
+         padding-top: 7rem;
+         @media screen and (max-width: 1439px) {
+            margin-top: 0rem;
+         }
       }
    }
    &__item {

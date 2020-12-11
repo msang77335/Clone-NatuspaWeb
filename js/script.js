@@ -35,6 +35,7 @@ const trailer = document.querySelector(".trailer");
 const trailerVideo = document.querySelector(".trailer__video");
 
 btnPlay.addEventListener("click", function () {
+   header.style.zIndex = 10;
    trailer.classList.add("show");
    trailerVideo.play();
 });
@@ -43,4 +44,5 @@ btnCloseVideo.addEventListener("click", function () {
    trailer.classList.remove("show");
    trailerVideo.pause();
    trailerVideo.currentTime = 0;
+   header.style.zIndex = 15;
 });
