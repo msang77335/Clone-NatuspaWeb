@@ -1358,6 +1358,11 @@ input {
       }
    }
 }
+@media screen and (max-width: 1024px) {
+   .booking {
+      background-attachment: scroll;
+   }
+}
 @media screen and (max-width: 900px) {
    .about {
       .trailer {
@@ -1458,6 +1463,12 @@ input {
    }
 }
 @media screen and (max-width: 500px) {
+   .to-top {
+      right: -2rem;
+      &.active {
+         right: 0.5rem;
+      }
+   }
    .header {
       padding: 2rem 1rem;
       &.sticky {
@@ -1498,23 +1509,6 @@ input {
          margin: 0;
       }
    }
-   .service {
-      &__item {
-         flex-direction: column;
-      }
-      &__info {
-         flex-direction: column;
-      }
-      &__title {
-         text-align: center;
-      }
-      &__desc {
-         max-width: 100%;
-         -webkit-line-clamp: auto;
-         overflow: auto;
-         -webkit-box-orient: vertical;
-      }
-   }
    .enjoy {
       &__title {
          font-size: 5rem;
@@ -1524,6 +1518,24 @@ input {
          &:not(:last-child) {
             margin-bottom: 5rem;
          }
+      }
+   }
+}
+@media screen and (max-width: 414px) {
+   .service {
+      &__item {
+         padding: 1.5rem 0;
+         margin: 0;
+      }
+      &__icon {
+         width: 7rem;
+         height: 7rem;
+      }
+      &__title {
+         font-size: 1.8rem;
+      }
+      &__price {
+         font-size: 1.8rem;
       }
    }
 }
