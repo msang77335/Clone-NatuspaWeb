@@ -28,6 +28,12 @@ body {
   color: #7c787d;
 }
 
+textarea,
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 .to-top {
   position: fixed;
   bottom: 15rem;
@@ -1476,6 +1482,10 @@ body {
   }
 }
 @media screen and (max-width: 900px) {
+  .about .trailer__video {
+    max-width: 90%;
+  }
+
   .banner__item {
     width: calc(50% - 2rem);
   }
@@ -1551,16 +1561,15 @@ body {
   }
 }
 @media screen and (max-width: 500px) {
+  .header {
+    padding: 2rem 1rem;
+  }
   .header.sticky {
     padding: 1rem;
   }
 
   .carousel .slick-slider .slick-dots {
     bottom: 2rem;
-  }
-
-  .about .trailer__video {
-    max-width: 90%;
   }
 
   .client__item-desc {

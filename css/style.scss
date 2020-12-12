@@ -30,6 +30,11 @@ body {
    font-weight: 400;
    color: #7c787d;
 }
+textarea,
+input {
+   -webkit-appearance: none;
+   border-radius: 0;
+}
 @mixin clamp($row: 3) {
    display: -webkit-box;
    -webkit-box-orient: vertical;
@@ -1343,6 +1348,13 @@ body {
    }
 }
 @media screen and (max-width: 900px) {
+   .about {
+      .trailer {
+         &__video {
+            max-width: 90%;
+         }
+      }
+   }
    .banner {
       &__item {
          width: calc(50% - 2rem);
@@ -1436,6 +1448,7 @@ body {
 }
 @media screen and (max-width: 500px) {
    .header {
+      padding: 2rem 1rem;
       &.sticky {
          padding: 1rem;
       }
@@ -1444,13 +1457,6 @@ body {
       .slick-slider {
          .slick-dots {
             bottom: 2rem;
-         }
-      }
-   }
-   .about {
-      .trailer {
-         &__video {
-            max-width: 90%;
          }
       }
    }
