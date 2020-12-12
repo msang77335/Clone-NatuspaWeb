@@ -1014,7 +1014,6 @@ body {
 
 .team {
   padding: 10rem 0;
-  text-align: center;
 }
 .team__desc {
   padding: 0 25rem;
@@ -1035,10 +1034,10 @@ body {
   overflow: hidden;
 }
 .team__item-info {
+  text-align: center;
+  width: 100%;
   position: absolute;
   bottom: 3%;
-  left: 50%;
-  transform: translateX(-50%);
   font-family: "Playfair Display", serif;
   color: #ffff;
 }
@@ -1552,6 +1551,22 @@ body {
   }
 }
 @media screen and (max-width: 500px) {
+  .header.sticky {
+    padding: 1rem;
+  }
+
+  .carousel .slick-slider .slick-dots {
+    bottom: 2rem;
+  }
+
+  .about .trailer__video {
+    max-width: 90%;
+  }
+
+  .client__item-desc {
+    font-size: 1.5rem;
+  }
+
   .banner__item {
     width: calc(100%);
   }

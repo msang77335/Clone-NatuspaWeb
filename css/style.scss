@@ -915,7 +915,6 @@ body {
 }
 .team {
    padding: 10rem 0;
-   text-align: center;
    &__desc {
       padding: 0 25rem;
       color: $desc-color;
@@ -930,10 +929,10 @@ body {
       position: relative;
       overflow: hidden;
       &-info {
+         text-align: center;
+         width: 100%;
          position: absolute;
          bottom: 3%;
-         left: 50%;
-         transform: translateX(-50%);
          font-family: $font-title;
          color: #ffff;
       }
@@ -1436,6 +1435,32 @@ body {
    }
 }
 @media screen and (max-width: 500px) {
+   .header {
+      &.sticky {
+         padding: 1rem;
+      }
+   }
+   .carousel {
+      .slick-slider {
+         .slick-dots {
+            bottom: 2rem;
+         }
+      }
+   }
+   .about {
+      .trailer {
+         &__video {
+            max-width: 90%;
+         }
+      }
+   }
+   .client {
+      &__item {
+         &-desc {
+            font-size: 1.5rem;
+         }
+      }
+   }
    .banner {
       &__item {
          width: calc(100%);
