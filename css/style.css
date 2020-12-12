@@ -1,6 +1,5 @@
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
 }
 
 img {
@@ -48,6 +47,18 @@ input {
   z-index: 20;
   visibility: hidden;
   transition: all 0.35s linear;
+  border: none;
+  background-color: transparent;
+}
+.to-top::before {
+  content: "";
+  position: absolute;
+  bottom: 35%;
+  left: -25%;
+  transform: translate(-50%, -50%);
+  height: 1.5px;
+  width: 2.5rem;
+  background-color: #f96882;
 }
 
 .to-top.active {
@@ -512,7 +523,7 @@ input {
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.9);
-  z-index: 20;
+  z-index: 30;
   opacity: 0;
   visibility: hidden;
   transition: all 0.25s linear;
