@@ -7,6 +7,21 @@ const body = document.querySelector("body");
 const bars = document.querySelector(".bars");
 const btnScrollTop = document.querySelector(".to-top");
 
+window.addEventListener("load", function () {
+   function fadeOut(el) {
+      el.style.opacity = 1;
+      (function fade() {
+         if ((el.style.opacity -= 0.05) < 0) {
+            el.style.display = "none";
+         } else {
+            requestAnimationFrame(fade);
+         }
+      })();
+   }
+   const loader = document.querySelector(".loader");
+   fadeOut(loader);
+});
+
 window.addEventListener("resize", changeFixedElementWidth);
 window.addEventListener("load", changeFixedElementWidth);
 window.addEventListener("load", setMagrinBottomContent);
@@ -88,4 +103,32 @@ function smoothScroll(duration) {
       return (-c / 2) * (t * (t - 2) - 1) + b;
    }
    requestAnimationFrame(animation);
+}
+
+//Couter
+let counters = document.querySelectorAll(".enjoy__item-score__inner");
+window.addEventListener("scroll", () => {
+   counters.forEach((counter) => {
+      if (counter.getBoundingClientRect().top < window.innerHeight - 100)
+         runCounter(counter);
+   });
+});
+function runCounter(counter) {
+   let inner = counter.innerText;
+   if (inner == 0) {
+      counter.innerText = 0;
+
+      let target = +counter.dataset.count;
+
+      let step = target / 100;
+
+      let countIt = function () {
+         let displayedCount = +counter.innerText;
+         if (displayedCount < target) {
+            counter.innerText = Math.ceil(displayedCount + step);
+            setTimeout(countIt, 1);
+         }
+      };
+      countIt();
+   }
 }
