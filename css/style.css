@@ -669,6 +669,9 @@ input {
 .client {
   padding: 8rem 0;
 }
+.client__container {
+  width: 75rem;
+}
 .client__item {
   text-align: center;
 }
@@ -690,6 +693,16 @@ input {
   font-family: "Playfair Display", serif;
   font-size: 2.2rem;
   color: black;
+  white-space: nowrap;
+  text-align: center;
+}
+.client__item-name::before {
+  content: "";
+  margin-left: -100%;
+}
+.client__item-name::after {
+  content: "";
+  margin-right: -100%;
 }
 .client__item-part {
   font-size: 1.4rem;
@@ -702,7 +715,7 @@ input {
   transition: all 0.25s linear;
 }
 .client .slider-nav {
-  padding: 2rem 0;
+  padding: 2rem 3rem;
 }
 .client .slider-nav .slick-track {
   padding: 1.5rem 0;
@@ -762,11 +775,17 @@ input {
   font-size: 1.8rem;
   color: #cdcccd;
   border: none;
+  font-weight: 300;
 }
 .booking__item {
   width: calc(33.33% - 2.5rem);
   margin-right: 2.5rem;
   margin-bottom: 2.5rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+}
+.booking__item.btn {
+  font-weight: 400;
 }
 .booking__date {
   position: absolute;
@@ -817,6 +836,7 @@ input {
   flex-direction: row;
 }
 .pricing-image__item {
+  position: relative;
   width: 25%;
   overflow: hidden;
 }
@@ -826,7 +846,150 @@ input {
 .pricing-image__item:hover img {
   transform: scale(1.2);
 }
+.pricing-image .info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  transform: rotate3d(1, 0, 0, 90deg);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(247, 115, 139, 0.9);
+}
+.pricing-image .info button {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  background-color: transparent;
+  position: relative;
+}
+.pricing-image .info button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.pricing-image .info button::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: #fff;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.In-top .info {
+  transform-origin: 50% 0%;
+  animation: in-top 300ms ease 0ms 1 forwards;
+}
+
+.In-right .info {
+  transform-origin: 100% 0%;
+  animation: in-right 300ms ease 0ms 1 forwards;
+}
+
+.In-bottom .info {
+  transform-origin: 50% 100%;
+  animation: in-bottom 300ms ease 0ms 1 forwards;
+}
+
+.In-left .info {
+  transform-origin: 0% 0%;
+  animation: in-left 300ms ease 0ms 1 forwards;
+}
+
+.Out-top .info {
+  transform-origin: 50% 0%;
+  animation: out-top 300ms ease 0ms 1 forwards;
+}
+
+.Out-right .info {
+  transform-origin: 100% 50%;
+  animation: out-right 300ms ease 0ms 1 forwards;
+}
+
+.Out-bottom .info {
+  transform-origin: 50% 100%;
+  animation: out-bottom 300ms ease 0ms 1 forwards;
+}
+
+.Out-left .info {
+  transform-origin: 0% 0%;
+  animation: out-left 300ms ease 0ms 1 forwards;
+}
+
+@keyframes in-top {
+  from {
+    transform: rotate3d(-1, 0, 0, 90deg);
+  }
+  to {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+@keyframes in-right {
+  from {
+    transform: rotate3d(0, -1, 0, 90deg);
+  }
+  to {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+@keyframes in-bottom {
+  from {
+    transform: rotate3d(1, 0, 0, 90deg);
+  }
+  to {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+@keyframes in-left {
+  from {
+    transform: rotate3d(0, 1, 0, 90deg);
+  }
+  to {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+@keyframes out-top {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  to {
+    transform: rotate3d(-1, 0, 0, 104deg);
+  }
+}
+@keyframes out-right {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  to {
+    transform: rotate3d(0, -1, 0, 104deg);
+  }
+}
+@keyframes out-bottom {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  to {
+    transform: rotate3d(1, 0, 0, 104deg);
+  }
+}
+@keyframes out-left {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  to {
+    transform: rotate3d(0, 1, 0, 104deg);
+  }
+}
 .service__list {
   display: flex;
   align-items: center;
@@ -1098,6 +1261,7 @@ input {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.1rem;
+  color: #ddd;
 }
 .team__item-image {
   object-fit: cover;
@@ -1311,6 +1475,8 @@ input {
   color: #cdcccd;
   margin-bottom: 2rem;
   border: 1px solid #cdcccd;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 .contact__form-textarea {
   display: block;
