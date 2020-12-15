@@ -606,7 +606,7 @@ input {
 .client {
    padding: 8rem 0;
    &__container {
-      width: 75rem;
+      max-width: 75rem;
    }
    &__item {
       text-align: center;
@@ -778,12 +778,13 @@ input {
          top: 0;
          left: 0;
          background: rgba(247, 115, 139, 0.9);
-         button {
+         a {
             width: 3rem;
             height: 3rem;
             border: none;
             background-color: transparent;
             position: relative;
+            cursor: pointer;
             &::after {
                content: "";
                position: absolute;
@@ -800,7 +801,7 @@ input {
                height: 100%;
                background-color: #fff;
                left: 50%;
-               transform: translate(-50%, -50%);
+               transform: translateX(-50%);
             }
          }
       }
@@ -1361,6 +1362,7 @@ input {
          margin-bottom: 2rem;
          font-family: $font;
          border: 1px solid $text-color;
+         font-weight: 300;
       }
    }
 }
@@ -1605,6 +1607,17 @@ input {
    }
 }
 @media screen and (max-width: 767px) {
+   .pricing {
+      &-image {
+         &__item {
+            width: 50%;
+            &:nth-child(2),
+            &:nth-child(3) {
+               display: none;
+            }
+         }
+      }
+   }
    .banner {
       &__item {
          width: calc(50% - 2rem);

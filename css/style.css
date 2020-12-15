@@ -670,7 +670,7 @@ input {
   padding: 8rem 0;
 }
 .client__container {
-  width: 75rem;
+  max-width: 75rem;
 }
 .client__item {
   text-align: center;
@@ -860,14 +860,15 @@ input {
   left: 0;
   background: rgba(247, 115, 139, 0.9);
 }
-.pricing-image .info button {
+.pricing-image .info a {
   width: 3rem;
   height: 3rem;
   border: none;
   background-color: transparent;
   position: relative;
+  cursor: pointer;
 }
-.pricing-image .info button::after {
+.pricing-image .info a::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -876,14 +877,14 @@ input {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.pricing-image .info button::before {
+.pricing-image .info a::before {
   content: "";
   position: absolute;
   width: 2px;
   height: 100%;
   background-color: #fff;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
 }
 
 .In-top .info {
@@ -1487,6 +1488,7 @@ input {
   margin-bottom: 2rem;
   font-family: "Poppins", sans-serif;
   border: 1px solid #cdcccd;
+  font-weight: 300;
 }
 
 .footer {
@@ -1728,6 +1730,13 @@ input {
   }
 }
 @media screen and (max-width: 767px) {
+  .pricing-image__item {
+    width: 50%;
+  }
+  .pricing-image__item:nth-child(2), .pricing-image__item:nth-child(3) {
+    display: none;
+  }
+
   .banner__item {
     width: calc(50% - 2rem);
   }
