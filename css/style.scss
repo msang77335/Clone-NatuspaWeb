@@ -750,6 +750,9 @@ input {
             color: $color--primary;
          }
       }
+      .service__item {
+         width: 50%;
+      }
    }
    &-image {
       margin-top: 10rem;
@@ -921,16 +924,14 @@ input {
 
 .service {
    &__list {
-      @include flexbox(center, flex-start, wrap, row);
       margin-top: 4.5rem;
-      margin-left: -2rem;
    }
    &__item {
       @include flexbox(center, space-between, nowrap, row);
       width: calc(50% - 2rem);
       padding: 1.5rem;
       border-bottom: 1px dashed $text-color;
-      margin-left: 2rem;
+      margin: 0 1rem;
       cursor: pointer;
       &:hover {
          .service__icon {
@@ -1582,18 +1583,17 @@ input {
          width: calc(50% - 2.5rem);
       }
    }
-   .categories {
-      &__list {
-         margin: 0 15rem;
+   .pricing {
+      .categories {
+         &__list {
+            margin: 3rem 10rem;
+         }
       }
-   }
-   .service {
-      &__list {
-         margin-left: 0;
-      }
-      &__item {
-         width: 100%;
-         margin: 1rem 4rem;
+      .service {
+         &__item {
+            width: 100%;
+            margin: 1rem;
+         }
       }
    }
    .packages {
@@ -1608,6 +1608,17 @@ input {
 }
 @media screen and (max-width: 767px) {
    .pricing {
+      .categories {
+         &__list {
+            margin: 3rem 2rem;
+         }
+      }
+      .service {
+         &__item {
+            width: 100%;
+            margin: 1rem 0rem;
+         }
+      }
       &-image {
          &__item {
             width: 50%;
@@ -1621,17 +1632,6 @@ input {
    .banner {
       &__item {
          width: calc(50% - 2rem);
-      }
-   }
-   .categories {
-      &__list {
-         margin: 0 2rem;
-      }
-   }
-   .service {
-      &__item {
-         width: 100%;
-         margin: 1rem 0rem;
       }
    }
    .team {
@@ -1717,9 +1717,16 @@ input {
          transform: translate(0);
       }
    }
-   .categories {
-      &__list {
-         margin: 0;
+   .pricing {
+      .categories {
+         &__list {
+            margin: 2rem 0;
+         }
+      }
+      .service {
+         &__list {
+            margin-top: 2rem;
+         }
       }
    }
    .enjoy {

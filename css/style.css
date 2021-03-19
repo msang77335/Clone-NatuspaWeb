@@ -825,6 +825,9 @@ input {
 .pricing .categories__item:hover {
   color: #f96882;
 }
+.pricing .categories .service__item {
+  width: 50%;
+}
 .pricing-image {
   margin-top: 10rem;
 }
@@ -992,13 +995,7 @@ input {
   }
 }
 .service__list {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  flex-direction: row;
   margin-top: 4.5rem;
-  margin-left: -2rem;
 }
 .service__item {
   display: flex;
@@ -1009,7 +1006,7 @@ input {
   width: calc(50% - 2rem);
   padding: 1.5rem;
   border-bottom: 1px dashed #cdcccd;
-  margin-left: 2rem;
+  margin: 0 1rem;
   cursor: pointer;
 }
 .service__item:hover .service__icon {
@@ -1709,16 +1706,12 @@ input {
     width: calc(50% - 2.5rem);
   }
 
-  .categories__list {
-    margin: 0 15rem;
+  .pricing .categories__list {
+    margin: 3rem 10rem;
   }
-
-  .service__list {
-    margin-left: 0;
-  }
-  .service__item {
+  .pricing .service__item {
     width: 100%;
-    margin: 1rem 4rem;
+    margin: 1rem;
   }
 
   .packages__item {
@@ -1730,6 +1723,13 @@ input {
   }
 }
 @media screen and (max-width: 767px) {
+  .pricing .categories__list {
+    margin: 3rem 2rem;
+  }
+  .pricing .service__item {
+    width: 100%;
+    margin: 1rem 0rem;
+  }
   .pricing-image__item {
     width: 50%;
   }
@@ -1739,15 +1739,6 @@ input {
 
   .banner__item {
     width: calc(50% - 2rem);
-  }
-
-  .categories__list {
-    margin: 0 2rem;
-  }
-
-  .service__item {
-    width: 100%;
-    margin: 1rem 0rem;
   }
 
   .team__desc {
@@ -1821,8 +1812,11 @@ input {
     transform: translate(0);
   }
 
-  .categories__list {
-    margin: 0;
+  .pricing .categories__list {
+    margin: 2rem 0;
+  }
+  .pricing .service__list {
+    margin-top: 2rem;
   }
 
   .enjoy__title {

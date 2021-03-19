@@ -306,15 +306,15 @@
                         inspiring Life in Balance.
                     </p>
                     <ul class="categories__list">
-                        <li class="categories__item active">All</li>
-                        <li class="categories__item">Facial</li>
-                        <li class="categories__item">Waxing</li>
-                        <li class="categories__item">Treatments</li>
-                        <li class="categories__item">Massage</li>
-                        <li class="categories__item">Nail</li>
+                        <li data-filter=".all" class="categories__item active">All</li>
+                        <li data-filter=".facial" class="categories__item">Facial</li>
+                        <li data-filter=".waxing" class="categories__item">Waxing</li>
+                        <li data-filter=".treatments" class="categories__item">Treatments</li>
+                        <li data-filter=".massage" class="categories__item">Massage</li>
+                        <li data-filter=".nail" class="categories__item">Nail</li>
                     </ul>
                     <ul class="service__list">
-                        <li class="service__item">
+                        <li class="service__item facial massage all">
                             <div class="service__info">
                                 <div class="service__icon">
                                     <i class="natuspa-icon-stone"></i>
@@ -327,7 +327,7 @@
                             </div>
                             <p class="service__price">$73.95</p>
                         </li>
-                        <li class="service__item">
+                        <li class="service__item waxing massage nail all">
                             <div class="service__info">
                                 <div class="service__icon">
                                     <i class="natuspa-icon-oil"></i>
@@ -340,7 +340,7 @@
                             </div>
                             <p class="service__price">$73.95</p>
                         </li>
-                        <li class="service__item">
+                        <li class="service__item facial treatments all">
                             <div class="service__info">
                                 <div class="service__icon">
                                     <i class="natuspa-icon-massage-1"></i>
@@ -353,7 +353,7 @@
                             </div>
                             <p class="service__price">$73.95</p>
                         </li>
-                        <li class="service__item">
+                        <li class="service__item waxing treatments all">
                             <div class="service__info">
                                 <div class="service__icon">
                                     <i class="natuspa-icon-cramp"></i>
@@ -366,7 +366,7 @@
                             </div>
                             <p class="service__price">$73.95</p>
                         </li>
-                        <li class="service__item">
+                        <li class="service__item nail massage all">
                             <div class="service__info">
                                 <div class="service__icon">
                                     <i class="natuspa-icon-polish"></i>
@@ -379,20 +379,20 @@
                             </div>
                             <p class="service__price">$73.95</p>
                         </li>
-                        <li class="service__item">
+                        <li class="service__item facial treatments waxing all">
                             <div class="service__info">
                                 <div class="service__icon">
                                     <i class="natuspa-icon-treatment"></i>
                                 </div>
                                 <div class="service__content">
-                                    <h4 class="service__title">Derm YougFacial</h4>
+                                    <h4 class="service__title">Derm Youg Facial</h4>
                                     <p class="service__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                                     </p>
                                 </div>
                             </div>
                             <p class="service__price">$73.95</p>
                         </li>
-                        <li class="service__item">
+                        <li class="service__item waxing all">
                             <div class="service__info">
                                 <div class="service__icon">
                                     <i class="natuspa-icon-depilation"></i>
@@ -405,7 +405,7 @@
                             </div>
                             <p class="service__price">$73.95</p>
                         </li>
-                        <li class="service__item">
+                        <li class="service__item treatments nail all">
                             <div class="service__info">
                                 <div class="service__icon">
                                     <i class="natuspa-icon-spa-1"></i>
@@ -845,6 +845,9 @@
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script src="./js/slick-slide.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/filter.js"></script>
+    <script src="./isotope/isotope.min.js"></script>
+    <script src="./js/isotope.js"></script>
     <script src="./js/lightbox-plus-jquery.min.js"></script>
 </body>
 
